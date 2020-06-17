@@ -35,7 +35,7 @@ def clean_data(df):
 
 def save_data(df, database_filename):
     engine = create_engine('sqlite:///'+database_filename)
-    df.to_sql('res', engine, index=False)  
+    df.to_sql('res', engine, index=False,if_exists='replace')  
 
 def main():
     if len(sys.argv) == 4:
@@ -44,7 +44,7 @@ def main():
 
         print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
               .format(messages_filepath, categories_filepath))
-        df = load_data(messages_filepath, categories_filepath)
+        df = load_data( categories_filepath,messages_filepath)
 
         print('Cleaning data...')
         df = clean_data(df)
