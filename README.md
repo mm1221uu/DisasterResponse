@@ -8,10 +8,6 @@
 
 # Disaster Response Pipeline Project
 
-![Intro Pic](screenshots/head.JPG)
-
-
-
 <a name="descripton"></a>
 
 ## Description
